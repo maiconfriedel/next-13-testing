@@ -15,7 +15,7 @@ export default async function Dashboard() {
       <ul>
         {posts.map((post: any) => (
           <li key={post.id}>
-            <Link href={`/repo/${post.id}`}>{post.title}</Link>
+            <Link href={`/post/${post.id}`}>{post.title}</Link>
           </li>
         ))}
       </ul>

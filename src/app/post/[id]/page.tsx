@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-interface RepoPageParams {
+interface PostPageParams {
   params: {
     id: string;
   };
 }
 
-export default async function Repo({ params }: RepoPageParams) {
+export default async function Post({ params }: PostPageParams) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   const response = await fetch(
@@ -16,12 +16,12 @@ export default async function Repo({ params }: RepoPageParams) {
     }
   );
 
-  const repo = await response.json();
+  const post = await response.json();
 
   return (
     <div>
-      <h1>Repo</h1>
-      <p>{JSON.stringify(repo, null, 2)}</p>
+      <h1>Post</h1>
+      <p>{JSON.stringify(post, null, 2)}</p>
       <Link href="/dashboard">Dashboard</Link>
     </div>
   );
